@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Histórico de Movimentações</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <h1>Histórico de Movimentações</h1>
+
+    <a href="/movimentacoes">Nova movimentação</a><br>
+    <a href="/dashboard">Voltar ao Dashboard</a>
+
+    <hr>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Produto</th>
+                <th>Tipo</th>
+                <th>Quantidade</th>
+                <th>Usuário</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for movimentacao in movimentacoes %}
+
+            <tr>
+                <td>{{ movimentacao[0] }}</td>
+                <td>{{ movimentacao[1] }}</td>
+                <td>{{ movimentacao[2] }}</td>
+                <td>{{ movimentacao[3] }}</td>
+                <td>{{ movimentacao[4] }}</td>
+                <td>{{ movimentacao[5] }}</td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+</body>
+</html>

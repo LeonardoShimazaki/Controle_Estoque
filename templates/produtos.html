@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Produtos - Controle de Estoque</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <h1>Produtos</h1>
+
+    <a href="/produtos/novo">Cadastrar novo produto</a><br>
+    <a href="/dashboard">Voltar ao Dashboard</a>
+
+    <hr>
+
+    <table border="1">
+       <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Estoque Atual</th>
+        <th>Estoque Mínimo</th>
+        <th>Status</th>
+        <th>Ações</th>
+        
+    </tr>
+        </thead>
+
+       <tbody>
+
+            {% for produto in produtos %}
+
+            <tr {% if produto[3] <= produto[4] %}class="alerta"{% endif %}>
+
+                <td>{{ produto[0] }}</td>
+                <td>{{ produto[1] }}</td>
+                <td>{{ produto[2] }}</td>
+                <td>{{ produto[3] }}</td>
+                <td>{{ produto[4] }}</td>
+
+                <td>
+                    {% if produto[3] <= produto[4] %}
+                        <strong>ESTOQUE BAIXO</strong>
+                    {% else %}
+                        Normal
+                    {% endif %}
+                </td>
+
+                <td>
+                    <a href="/produtos/editar/{{ produto[0] }}">Editar</a>
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+</body>
+</html>

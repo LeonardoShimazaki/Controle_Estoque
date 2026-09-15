@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Controle de Estoque</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>Controle de Estoque</h1>
+
+        <p>
+            Usuário: <strong>{{ nome }}</strong>
+            |
+            Perfil: <strong>{{ perfil }}</strong>
+        </p>
+    </header>
+
+    <hr>
+
+    <main>
+
+        <h2>Menu principal</h2>
+
+        <p>Selecione uma opção:</p>
+
+        <ul>
+            <li>
+                <a href="/produtos">Consultar produtos</a>
+            </li>
+
+            <li>
+                <a href="/movimentacoes">Movimentar estoque</a>
+            </li>
+
+            <li>
+                <a href="/historico">Histórico de movimentações</a>
+            </li>
+
+            {% if perfil == "ADMIN" %}
+            <li>
+                <a href="/usuarios">Gerenciar usuários</a>
+            </li>
+            {% endif %}
+        </ul>
+
+    </main>
+
+    <hr>
+
+    <footer>
+        <a href="/logout">Sair do sistema</a>
+    </footer>
+
+</body>
+</html>

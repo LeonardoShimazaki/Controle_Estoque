@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f2f4f7;
+    color: #171717;
+}
+
+header {
+    background: #0b1f33;
+    color: white;
+    padding: 20px 30px;
+}
+
+header h1 {
+    margin: 0 0 8px 0;
+}
+
+header p {
+    margin: 0;
+    color: #d9e2ec;
+}
+
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    color: #0b1f33;
+}
+
+h2 {
+    color: #0b1f33;
+    border-left: 5px solid #f28c28;
+    padding-left: 10px;
+}
+
+a {
+    color: #0b3a63;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f28c28;
+}
+
+button {
+    background: #f28c28;
+    color: #111111;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #d97414;
+}
+
+input,
+select {
+    padding: 9px;
+    margin-top: 5px;
+    border: 1px solid #aeb8c2;
+    border-radius: 4px;
+    width: 260px;
+    background: white;
+    color: #171717;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border: 2px solid #f28c28;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 20px;
+}
+
+th {
+    background: #0b1f33;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 11px;
+    border-bottom: 1px solid #d9dee3;
+}
+
+tr:hover {
+    background: #f7f9fb;
+}
+
+.alerta {
+    background-color: #fff0e0;
+    color: #9a4300;
+    font-weight: bold;
+}
+
+.alerta:hover {
+    background-color: #ffe2c2;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #d9dee3;
+    margin: 25px 0;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin: 12px 0;
+}
+
+footer {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 15px 30px;
+}
+
+@media (max-width: 700px) {
+    main {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    input,
+    select {
+        width: 100%;
+    }
+}
+

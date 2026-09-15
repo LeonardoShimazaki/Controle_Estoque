@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Operação realizada</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <main>
+
+        <h1>Operação realizada com sucesso!</h1>
+
+        <p>{{ mensagem }}</p>
+
+
+        <hr>
+
+        {% if tipo == "produto" %}
+
+            <a href="/produtos">Voltar para produtos | </a>
+
+        {% elif tipo == "movimentacao" %}
+
+            <a href="/movimentacoes">Nova movimentação | </a>
+
+            <a href="/historico">Ver histórico | </a>
+
+        {% elif tipo == "usuario" %}
+
+            <a href="/usuarios">Voltar para usuários | </a>
+
+        {% endif %}
+
+        <a href="/dashboard">Voltar ao Dashboard</a>
+
+    </main>
+
+</body>
+</html>
+
